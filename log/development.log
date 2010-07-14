@@ -1,0 +1,2 @@
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead.. (called from /home/janek/rails_projects/zmkk/app/models/user.rb:4)
+DEPRECATION WARNING: :authenticatable as module is deprecated. Please give :database_authenticatable instead.. (called from /home/janek/rails_projects/zmkk/app/models/user.rb:4)
