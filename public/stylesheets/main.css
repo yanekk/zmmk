@@ -1,0 +1,62 @@
+body {
+  font-family: Arial;
+  font-size: 20px; }
+  body a {
+    color: #0c77cf; }
+    body a:hover {
+      color: #2c97ef; }
+  body #main_container #top_bar, body #main_container #bottom_bar {
+    color: white;
+    font-size: 30px;
+    width: 100%;
+    height: 50px;
+    background: #0e9fef; }
+    body #main_container #top_bar .left_item, body #main_container #top_bar .right_item, body #main_container #bottom_bar .left_item, body #main_container #bottom_bar .right_item {
+      width: 170px;
+      height: 50px;
+      background: #5fb7ff;
+      text-align: center; }
+      body #main_container #top_bar .left_item .item-content, body #main_container #top_bar .right_item .item-content, body #main_container #bottom_bar .left_item .item-content, body #main_container #bottom_bar .right_item .item-content {
+        padding-top: 10px; }
+      body #main_container #top_bar .left_item .disabled a, body #main_container #top_bar .right_item .disabled a, body #main_container #bottom_bar .left_item .disabled a, body #main_container #bottom_bar .right_item .disabled a {
+        color: #8fcdff; }
+    body #main_container #top_bar .left_item, body #main_container #bottom_bar .left_item {
+      float: left;
+      margin-right: 10px; }
+    body #main_container #top_bar .right_item, body #main_container #bottom_bar .right_item {
+      float: right;
+      margin-left: 10px; }
+    body #main_container #top_bar .item-content a, body #main_container #bottom_bar .item-content a {
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase; }
+    body #main_container #top_bar .center_item .item-content, body #main_container #bottom_bar .center_item .item-content {
+      padding: 10px; }
+
+a.button {
+  display: block;
+  text-align: right;
+  margin: 0 auto;
+  font-size: 14px;
+  color: white;
+  background: #1d91ef;
+  float: right;
+  padding: 10px;
+  -moz-border-radius: 10px;
+  text-decoration: none;
+  margin-top: 10px; }
+  a.button:hover {
+    color: #dff4ff; }
+
+#flash_container .flash {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 10px;
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+  -moz-border-radius: 3px; }
+#flash_container .error-flash {
+  background: #ff4f56; }
+#flash_container .notice-flash {
+  background: #5fc6ff; }

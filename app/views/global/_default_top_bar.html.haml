@@ -1,0 +1,10 @@
+- content_for :top_right_item do
+    - if user_signed_in?
+        = link_to "Wyloguj", destroy_user_session_path
+
+- content_for :top_center_item do
+    = label
+- content_for :top_left_item do
+    - if defined? return_path
+        = link_to "Powrót", return_path
+

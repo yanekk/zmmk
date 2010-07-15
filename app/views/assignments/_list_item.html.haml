@@ -1,0 +1,13 @@
+- if user_signed_in?
+    %span.admin-panel
+        - unless ass.active?
+            = link_to "Aktywuj", lesson_module_assignment_activation_path(mod, ass, "update"), :method   => :put
+        - else
+            = link_to "Deaktywuj", lesson_module_assignment_activation_path(mod, ass, "update"), :method => :delete
+        = link_to "Edytuj", edit_lesson_module_assignment_path(mod, ass)
+        = link_to "Usuń", lesson_module_assignment_path(mod, ass), :method => :delete, :confirm => "Czy na pewno?"
+
+%a{:href => lesson_module_assignment_path(mod, ass)}
+    %span.title= ass.name
+    %span.description= ass.description
+

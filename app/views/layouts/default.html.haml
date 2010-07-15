@@ -1,0 +1,31 @@
+!!! 1.0
+%html
+    %head
+        %title This is the test
+        = javascript_include_tag "jquery-1.4.2"
+        = render_javascripts
+
+        = stylesheet_link_tag "reset", "main"
+        = render_stylesheets
+
+    %body
+        #main_container
+            #top_bar
+                .left_item
+                    .item-content
+                        = yield :top_left_item
+                .right_item
+                    .item-content
+                        = yield :top_right_item
+                .center_item
+                    .item-content
+                        = yield :top_center_item
+
+
+            #content_container
+                - unless flash.empty?
+                    %ul#flash_container
+                        - flash.each do |type, flash|
+                            %li{:class => "#{type}-flash flash"}= flash
+                = yield
+

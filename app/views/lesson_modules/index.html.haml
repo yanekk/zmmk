@@ -1,0 +1,15 @@
+- include_stylesheet "lesson_modules"
+
+- render "global/default_top_bar", :label => "Lista modułów"
+- if user_signed_in?
+    - include_javascript "jquery-ui-1.8.2"
+    - include_javascript "ui/module-index.js"
+
+#module_container.item_container
+    %ul#modules.items
+        - @modules.each_with_index do |mod, index|
+            %li.module.item{:id => "lesson_module_#{mod.id}", :class => ((index.even?) ? "even" : "")}
+                = render "list_item", :mod => mod
+    - if user_signed_in?
+        = link_to "Dodaj moduł", new_lesson_module_path, :class => "button"
+

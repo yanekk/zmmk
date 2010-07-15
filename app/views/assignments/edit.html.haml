@@ -1,0 +1,3 @@
+- render "global/default_top_bar", :label => "Edytuj zadanie dla #{@lesson_module.name}", :return_path => lesson_module_assignments_path(@lesson_module)
+= render "form", :lesson_module => @lesson_module, :assignment => @assignment
+

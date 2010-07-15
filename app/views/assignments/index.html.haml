@@ -1,0 +1,19 @@
+
+- render "global/default_top_bar", :label => "#{@lesson_module.name} - zadania", :return_path => lesson_modules_path
+
+- include_stylesheet "assignments"
+
+- if user_signed_in?
+    - include_javascript "jquery-ui-1.8.2"
+    - include_javascript "ui/assignment-index.js"
+    %form
+        %input{:type => "hidden", :id => "lesson_module_id", :value => @lesson_module.id}
+
+#assignment_container.item_container
+    %ul#assignments.items
+        - @assignments.each_with_index do |ass, index|
+            %li.assignment.item{:id => "assignment_#{ass.id}", :class => ((index.even?) ? "even" : "")}
+                = render "list_item", :ass => ass, :mod => @lesson_module
+    - if user_signed_in?
+        = link_to "Dodaj zadanie w tym module", new_lesson_module_assignment_path(@lesson_module), :class => "button"
+

@@ -1,0 +1,14 @@
+- include_stylesheet "form"
+
+#form_container
+    - semantic_form_for [lesson_module, assignment] do |form|
+        - form.inputs do
+            = form.input :name
+            = form.input :description, :as => :string
+            = form.input :template, :as => :text
+            = form.input :css, :as => :text
+            = form.input :js, :as => :text
+
+        - form.buttons do
+            = form.commit_button
+

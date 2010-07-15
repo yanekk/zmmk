@@ -1,0 +1,26 @@
+.item_container {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 20px; }
+  .item_container .items .item {
+    padding: 20px;
+    background: #fff9df;
+    -moz-border-radius: 20px; }
+    .item_container .items .item .admin-panel {
+      float: right;
+      font-size: 14px; }
+    .item_container .items .item .title {
+      display: block;
+      font-size: 28px;
+      font-weight: bold; }
+    .item_container .items .item .description {
+      display: block; }
+  .item_container .items .even {
+    background: #effcff; }
+
+#assignment_container .assignment {
+  padding: 10px; }
+  #assignment_container .assignment .title {
+    font-size: 20px; }
+  #assignment_container .assignment .description {
+    font-size: 14px; }

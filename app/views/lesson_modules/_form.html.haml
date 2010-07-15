@@ -1,0 +1,11 @@
+- include_stylesheet "form"
+#form_container
+    - semantic_form_for(mod) do |form|
+        = form.semantic_errors
+        - form.inputs do
+            = form.input :name
+            = form.input :description, :as => :string
+            = form.input :template, :as => :text
+        - form.buttons do
+            = form.commit_button
+

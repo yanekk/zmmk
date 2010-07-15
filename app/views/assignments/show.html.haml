@@ -1,0 +1,19 @@
+- include_javascript "ui/assignment-show.js"
+- include_javascript lesson_module_assignment_path(:lesson_module=> $lesson_module, :assignment => $assignment, :format => "js")
+- include_stylesheet lesson_module_assignment_path(:lesson_module=> $lesson_module, :assignment => $assignment, :format => "css")
+
+- render "global/default_top_bar", :label => "Zadanie: #{@assignment.name}", :return_path => lesson_module_assignments_path(@lesson_module)
+#assignment_container
+    = @content
+
+#bottom_bar
+    .right_item
+        .item-content.disabled
+            - unless user_signed_in? ? @assignment.last? : @assignment.last_assignment?
+                = link_to "Następne", lesson_module_assignment_path(@lesson_module, user_signed_in? ? @assignment.lower_item : @assignment.next_assignment)
+            - else
+                = link_to "Zakończ", lesson_module_assignments_path(@lesson_module)
+    .center_item
+        .item-content
+            = @assignment.description
+

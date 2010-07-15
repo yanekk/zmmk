@@ -1,6 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
   map.devise_for :users
-
+  map.root :controller => "lesson_modules", :action => "index"
+  map.resources :lesson_modules, :collection => {:update_order => :put}, :except => [:show] do |lesson_modules|
+    lesson_modules.resources :activations, :only => [:update, :destroy], :controller => "LessonModuleActivations"
+    lesson_modules.resources :assignments, :collection => {:update_order => :put} do |assignments|
+      assignments.resources :activations, :only => [:update, :destroy], :controller => "AssignmentActivations"
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
