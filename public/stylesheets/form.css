@@ -6,7 +6,8 @@
   #form_container .formtastic textarea, #form_container .formtastic input {
     width: 100%;
     border: 1px solid #aaaaaa;
-    -moz-border-radius: 3px; }
+    -moz-border-radius: 3px;
+    border-radius: 3px; }
   #form_container .formtastic label {
     font-size: 14px;
     padding: 5px 0;
@@ -28,6 +29,7 @@
     padding: 5px;
     background: #df0d16;
     -moz-border-radius: 5px;
+    border-radius: 5px;
     width: 75%;
     margin: 0 auto;
     margin-bottom: 5px;

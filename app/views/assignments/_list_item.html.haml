@@ -7,7 +7,7 @@
         = link_to "Edytuj", edit_lesson_module_assignment_path(mod, ass)
         = link_to "Usuń", lesson_module_assignment_path(mod, ass), :method => :delete, :confirm => "Czy na pewno?"
 
-%a{:href => lesson_module_assignment_path(mod, ass)}
+%a.item-data{:href => lesson_module_assignment_path(mod, ass)}
     %span.title= ass.name
     %span.description= ass.description
 

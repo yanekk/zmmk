@@ -1,4 +1,7 @@
 - include_stylesheet "form"
+- include_javascript "edit_area/edit_area_full.js"
+- include_javascript "form/lesson-module-form"
+
 #form_container
     - semantic_form_for(mod) do |form|
         = form.semantic_errors
@@ -6,6 +9,8 @@
             = form.input :name
             = form.input :description, :as => :string
             = form.input :template, :as => :text
+            = form.input :global_css, :as => :text
+            = form.input :global_js, :as => :text
         - form.buttons do
             = form.commit_button
 

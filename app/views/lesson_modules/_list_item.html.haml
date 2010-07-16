@@ -6,7 +6,7 @@
             = link_to "Deaktywuj", lesson_module_activation_path(mod, "destroy"), :method => :delete
         = link_to "Edytuj", edit_lesson_module_path(mod)
         = link_to "Usuń", lesson_module_path(mod), :method => :delete, :confirm => "Czy na pewno?"
-%a{:href => lesson_module_assignments_path(mod)}
+%a.item-data{:href => lesson_module_assignments_path(mod)}
     %span.title= mod.name
     %span.description= mod.description
 

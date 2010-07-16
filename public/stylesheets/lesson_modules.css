@@ -5,7 +5,8 @@
   .item_container .items .item {
     padding: 20px;
     background: #fff9df;
-    -moz-border-radius: 20px; }
+    -moz-border-radius: 20px;
+    border-radius: 20px; }
     .item_container .items .item .admin-panel {
       float: right;
       font-size: 14px; }
@@ -15,5 +16,7 @@
       font-weight: bold; }
     .item_container .items .item .description {
       display: block; }
+    .item_container .items .item .item-data {
+      text-decoration: none; }
   .item_container .items .even {
     background: #effcff; }

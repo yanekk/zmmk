@@ -8,7 +8,7 @@
 
 #bottom_bar
     .right_item
-        .item-content.disabled
+        .item-content.disabled#forward-link
             - unless user_signed_in? ? @assignment.last? : @assignment.last_assignment?
                 = link_to "Następne", lesson_module_assignment_path(@lesson_module, user_signed_in? ? @assignment.lower_item : @assignment.next_assignment)
             - else

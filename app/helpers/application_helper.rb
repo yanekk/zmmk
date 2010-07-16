@@ -13,9 +13,27 @@ module ApplicationHelper
     @@js ||= []
     @@js << filename
   end
+
   def render_javascripts
     @@js ||= []
     @@js.map {|js| javascript_include_tag(js)}.join("\n")
   end
+
+  def add_to_title(fragment)
+    init_title
+    @@title << fragment
+  end
+
+  def render_title(separator = " - ")
+    init_title
+    return @@title.join(separator)
+  end
+
+  private
+  def init_title
+    @@title ||= []
+  end
+
+
 end
 

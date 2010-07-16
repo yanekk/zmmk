@@ -1,11 +1,18 @@
 function update_assignment_container_height() {
     $("#assignment_container").height($(window).height() - (2 * $("#bottom_bar").height()));
 }
+
 var assignment_finished = false;
-function finish_assignment() {
+function finish() {
     $("#bottom_bar .right_item .item-content").removeClass("disabled");
     assignment_finished = true;
 }
+
+function finish_and_move_forward() {
+    finish();
+    window.location = $("#forward-link").attr("href");
+}
+
 jQuery(function(){
     update_assignment_container_height();
     $(window).resize(update_assignment_container_height);

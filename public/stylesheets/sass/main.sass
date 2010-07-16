@@ -1,4 +1,5 @@
 @import "top_bar"
+@import "round_borders"
 
 a.button
     display: block
@@ -9,7 +10,7 @@ a.button
     background: #1D91EF
     float: right
     padding: 10px
-    -moz-border-radius: 10px
+    @include round-borders(10px)
     text-decoration: none
     margin-top: 10px
     &:hover
@@ -23,7 +24,7 @@ a.button
         color: white
         padding: 5px
         font-size: 14px
-        -moz-border-radius: 3px
+        @include round-borders(3px)
 
     .error-flash
         background: #FF4F56

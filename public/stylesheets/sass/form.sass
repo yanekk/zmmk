@@ -1,3 +1,5 @@
+@import "round_borders"
+
 #form_container
     width: 75%
     margin: 0 auto
@@ -8,7 +10,7 @@
         textarea, input
             width: 100%
             border: 1px solid #aaa
-            -moz-border-radius: 3px
+            @include round-borders(3px)
 
         label
             font-size: 14px
@@ -34,7 +36,7 @@
             font-size: 14px
             padding: 5px
             background: #DF0D16
-            -moz-border-radius: 5px
+            @include round-borders(5px)
             width: 75%
             margin: 0 auto
             margin-bottom: 5px

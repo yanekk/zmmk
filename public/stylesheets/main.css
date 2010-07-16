@@ -43,6 +43,7 @@ a.button {
   float: right;
   padding: 10px;
   -moz-border-radius: 10px;
+  border-radius: 10px;
   text-decoration: none;
   margin-top: 10px; }
   a.button:hover {
@@ -55,7 +56,8 @@ a.button {
   color: white;
   padding: 5px;
   font-size: 14px;
-  -moz-border-radius: 3px; }
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
 #flash_container .error-flash {
   background: #ff4f56; }
 #flash_container .notice-flash {

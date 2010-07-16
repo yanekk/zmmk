@@ -1,7 +1,9 @@
 !!! 1.0
-%html
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
     %head
-        %title This is the test
+        %meta{:"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}
+        - add_to_title "Kurs komputerowy"
+        %title= render_title
         = javascript_include_tag "jquery-1.4.2"
         = render_javascripts
 

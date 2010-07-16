@@ -1,3 +1,5 @@
+@import "round_borders"
+
 .item_container
     width: 75%
     margin: 0 auto
@@ -7,7 +9,7 @@
         .item
             padding: 20px
             background: #FFF9DF
-            -moz-border-radius: 20px
+            @include round-borders(20px)
 
             .admin-panel
                 float: right
@@ -21,6 +23,8 @@
             .description
                 display: block
 
+            .item-data
+                text-decoration: none
         .even
             background: #EFFCFF
 
