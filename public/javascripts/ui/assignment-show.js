@@ -10,7 +10,7 @@ function finish() {
 
 function finish_and_move_forward() {
     finish();
-    window.location = $("#forward-link").attr("href");
+    window.location = $("#forward-link a").attr("href");
 }
 
 jQuery(function(){
