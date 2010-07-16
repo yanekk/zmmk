@@ -1,5 +1,5 @@
 function update_assignment_container_height() {
-    $("#assignment_container").height($(window).height() - (2 * $("#bottom_bar").height()));
+    $("#assignment_container").height($(window).height() - ($("#bottom_bar").height()));
 }
 
 var assignment_finished = false;
