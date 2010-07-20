@@ -22,6 +22,7 @@ production:
   encoding: utf8
   username: my_3182a
   password: torpeda
+  port: 3307
 
 cucumber:
   <<: *TEST
