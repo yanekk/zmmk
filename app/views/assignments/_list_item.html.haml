@@ -6,6 +6,7 @@
             = link_to "Deaktywuj", lesson_module_assignment_activation_path(mod, ass, "update"), :method => :delete
         = link_to "Edytuj", edit_lesson_module_assignment_path(mod, ass)
         = link_to "Usuń", lesson_module_assignment_path(mod, ass), :method => :delete, :confirm => "Czy na pewno?"
+        = link_to "Skopiuj", copy_lesson_module_assignment_path(mod, ass), :method => :put, :confirm => "Czy na pewno?"
 
 %a.item-data{:href => lesson_module_assignment_path(mod, ass)}
     %span.title= ass.name

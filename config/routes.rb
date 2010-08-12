@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "lesson_modules", :action => "index"
   map.resources :lesson_modules, :collection => {:update_order => :put}, :except => [:show] do |lesson_modules|
     lesson_modules.resources :activations, :only => [:update, :destroy], :controller => "LessonModuleActivations"
-    lesson_modules.resources :assignments, :collection => {:update_order => :put} do |assignments|
+    lesson_modules.resources :assignments, :collection => {:update_order => :put}, :member => {:copy => :put} do |assignments|
       assignments.resources :activations, :only => [:update, :destroy], :controller => "AssignmentActivations"
     end
   end

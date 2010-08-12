@@ -1,7 +1,7 @@
 class AssignmentsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   before_filter :load_lesson_module
-  before_filter :load_assignment, :only => [:edit, :update, :destroy, :show]
+  before_filter :load_assignment, :only => [:edit, :update, :destroy, :show, :copy]
 
   def index
     if user_signed_in?
@@ -86,6 +86,14 @@ class AssignmentsController < ApplicationController
     end
   end
 
+  def copy
+    copy = Assignment.new(@assignment.attributes)
+    copy.name += "(copy)"
+    copy.insert_at(@assignment.position + 1)
+    copy.save
+    redirect_to lesson_module_assignments_path(params[:lesson_module_id])
+  end
+
   private
   def load_lesson_module
     @lesson_module = LessonModule.find(params[:lesson_module_id])
@@ -100,8 +108,5 @@ class AssignmentsController < ApplicationController
     flash[:error] = e.message
     redirect_to lesson_module_assignments_path(@lesson_module)
   end
-
-
-
 end
 
