@@ -43,6 +43,3 @@ Rails::Initializer.run do |config|
   config.gem "haml"
 end
 
-Mime::Type.register "text/css", :css
-Mime::Type.register "application/javascript", :js
-
