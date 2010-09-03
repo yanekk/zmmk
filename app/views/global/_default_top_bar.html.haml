@@ -6,5 +6,8 @@
     = label
 - content_for :top_left_item do
     - if defined? return_path
-        = link_to "Powrót", return_path
+        - if return_path.kind_of?(Array)
+            = link_to return_path[1], return_path[0], :id => return_path[2]
+        - else
+            = link_to "Powrót", return_path
 

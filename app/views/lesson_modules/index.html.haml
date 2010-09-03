@@ -1,10 +1,11 @@
 - include_stylesheet "lesson_modules"
 - add_to_title "Lista modułów"
 
-- render "global/default_top_bar", :label => "Lista modułów"
+- render "global/default_top_bar", :label => "Lista modułów", :return_path => ["#", "Wyjście", "close_button"]
 - if user_signed_in?
     - include_javascript "jquery-ui-1.8.2"
     - include_javascript "ui/module-index.js"
+- include_javascript "ui/module-index-user"
 
 #module_container.item_container
     %ul#modules.items
