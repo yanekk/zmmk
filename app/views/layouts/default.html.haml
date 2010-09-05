@@ -5,10 +5,10 @@
         - add_to_title "Kurs komputerowy"
         %title= render_title
         = javascript_include_tag "jquery-1.4.2"
-        = render_javascripts
+        = raw render_javascripts
 
         = stylesheet_link_tag "reset", "main"
-        = render_stylesheets
+        = raw render_stylesheets
 
     %body
         #main_container

@@ -4,7 +4,7 @@
 
 - render "global/default_top_bar", :label => "Zadanie: #{@assignment.name}", :return_path => lesson_module_assignments_path(@lesson_module)
 #assignment_container
-    = @content
+    = raw @content
 
 #bottom_bar
     .right_item

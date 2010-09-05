@@ -8,8 +8,8 @@ class LessonModule < ActiveRecord::Base
                       :message => "must contain {content} directive for correct lesson display"
   attr_protected :developement
   acts_as_list
-  named_scope :in_order, :order => "position ASC"
-  named_scope :active, :conditions => ["developement = ?", false]
+  scope :in_order, order("position ASC")
+  scope :active, where(["developement = ?", false])
 
   def activate
     self.developement = false
