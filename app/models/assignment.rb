@@ -22,7 +22,7 @@ class Assignment < ActiveRecord::Base
   end
 
   def next_assignment
-    a = Assignment.find(:first, :conditions => ["(lesson_module_id = ?) AND (position >= #{position+1}) AND (developement = ?)", lesson_module.id, false])
+    a = Assignment.find(:first, :conditions => ["(lesson_module_id = ?) AND (position >= #{position+1}) AND (developement = ?)", lesson_module.id, false], :order => "position ASC")
   end
 
   def last_assignment?
