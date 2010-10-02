@@ -4,8 +4,8 @@ class Assignment < ActiveRecord::Base
 
   acts_as_list :scope => :lesson_module
 
-  named_scope :in_order, :order => "position ASC"
-  named_scope :active, :conditions => ["developement = ?", false]
+  scope :in_order, order("position ASC")
+  scope :active, where(["developement = ?", false])
 
   def activate
     self.developement = false
@@ -22,11 +22,11 @@ class Assignment < ActiveRecord::Base
   end
 
   def next_assignment
-    a = Assignment.find(:first, :conditions => ["(lesson_module_id = ?) AND (position >= #{position+1}) AND (developement = ?)", lesson_module.id, false], :order => "position ASC")
+    a = Assignment.first.where(["(lesson_module_id = ?) AND (position >= #{position+1}) AND (developement = ?)", lesson_module.id, false])
   end
 
   def last_assignment?
-    a = Assignment.find(:first, :conditions => ["(lesson_module_id = ?) AND (position >= #{position+1}) AND (developement = ?)", lesson_module.id, false])
+    a = Assignment.first.where(["(lesson_module_id = ?) AND (position >= #{position+1}) AND (developement = ?)", lesson_module.id, false])
     return false if a
     true
   end
