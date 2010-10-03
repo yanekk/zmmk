@@ -22,11 +22,11 @@ class Assignment < ActiveRecord::Base
   end
 
   def next_assignment
-    a = Assignment.first.where(["(lesson_module_id = ?) AND (position >= #{position+1}) AND (developement = ?)", lesson_module.id, false])
+    a = Assignment.where(["(lesson_module_id = ?) AND (position >= #{position+1}) AND (developement = ?)", lesson_module.id, false]).first
   end
 
   def last_assignment?
-    a = Assignment.first.where(["(lesson_module_id = ?) AND (position >= #{position+1}) AND (developement = ?)", lesson_module.id, false])
+    a = Assignment.where(["(lesson_module_id = ?) AND (position >= #{position+1}) AND (developement = ?)", lesson_module.id, false]).first
     return false if a
     true
   end
